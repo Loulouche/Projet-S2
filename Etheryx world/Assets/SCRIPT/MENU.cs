@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MENU : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class MENU : MonoBehaviour
         Application.Quit();
     }
 
+
+    
 
 
 
