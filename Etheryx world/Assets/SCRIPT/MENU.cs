@@ -11,6 +11,8 @@ public class MENU : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(1);
     }
+ 
+ 
 
     public void SettingsButton()
     {
@@ -20,6 +22,13 @@ public class MENU : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
     }
 
 
