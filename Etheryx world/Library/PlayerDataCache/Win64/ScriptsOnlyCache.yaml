@@ -12,6 +12,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -133,9 +134,9 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: MENU
+    methodName: PlayGame
   - assembly: Assembly-CSharp
     fullTypeName: RESOLUTION
     methodName: SetResolution
@@ -173,7 +174,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   sceneClasses:
-    Assets/SCENES/GAME.unity:
+    Assets/Scenes/GAME.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -195,25 +196,27 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 680}
+    - Class: 114
       Script: {instanceID: 1568}
     - Class: 114
       Script: {instanceID: 1570}
     - Class: 114
-      Script: {instanceID: 2658}
+      Script: {instanceID: 2664}
     - Class: 114
-      Script: {instanceID: 2866}
+      Script: {instanceID: 2872}
     - Class: 114
-      Script: {instanceID: 4452}
+      Script: {instanceID: 4458}
     - Class: 114
-      Script: {instanceID: 5890}
+      Script: {instanceID: 5896}
     - Class: 114
-      Script: {instanceID: 6016}
+      Script: {instanceID: 6022}
     - Class: 114
-      Script: {instanceID: 6964}
+      Script: {instanceID: 6970}
     - Class: 114
-      Script: {instanceID: 7392}
+      Script: {instanceID: 7400}
     - Class: 114
-      Script: {instanceID: 8738}
+      Script: {instanceID: 8746}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -228,7 +231,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/SCENES/MENU.unity:
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
+      Script: {instanceID: 0}
+    Assets/Scenes/MENU.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -256,43 +265,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1570}
     - Class: 114
-      Script: {instanceID: 2340}
+      Script: {instanceID: 2344}
     - Class: 114
-      Script: {instanceID: 2658}
+      Script: {instanceID: 2664}
     - Class: 114
-      Script: {instanceID: 2848}
+      Script: {instanceID: 2854}
     - Class: 114
-      Script: {instanceID: 2866}
+      Script: {instanceID: 2872}
     - Class: 114
-      Script: {instanceID: 3110}
+      Script: {instanceID: 3116}
     - Class: 114
-      Script: {instanceID: 3468}
+      Script: {instanceID: 3474}
     - Class: 114
-      Script: {instanceID: 4392}
+      Script: {instanceID: 4398}
     - Class: 114
-      Script: {instanceID: 4452}
+      Script: {instanceID: 4458}
     - Class: 114
-      Script: {instanceID: 4618}
+      Script: {instanceID: 4624}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4762}
     - Class: 114
-      Script: {instanceID: 5094}
+      Script: {instanceID: 5100}
     - Class: 114
-      Script: {instanceID: 5890}
+      Script: {instanceID: 5896}
     - Class: 114
-      Script: {instanceID: 5910}
+      Script: {instanceID: 5916}
     - Class: 114
-      Script: {instanceID: 6016}
+      Script: {instanceID: 6022}
     - Class: 114
-      Script: {instanceID: 6758}
+      Script: {instanceID: 6764}
     - Class: 114
-      Script: {instanceID: 6964}
+      Script: {instanceID: 6970}
     - Class: 114
-      Script: {instanceID: 7380}
+      Script: {instanceID: 7388}
     - Class: 114
-      Script: {instanceID: 7392}
+      Script: {instanceID: 7400}
     - Class: 114
-      Script: {instanceID: 8738}
+      Script: {instanceID: 8746}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1458,6 +1467,6 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   platform: 19
   scenePathNames:
-  - Assets/SCENES/MENU.unity
-  - Assets/SCENES/GAME.unity
+  - Assets/Scenes/MENU.unity
+  - Assets/Scenes/GAME.unity
   playerPath: C:/Users/linel/Projet-S2-TEST/Etheryx world.exe
