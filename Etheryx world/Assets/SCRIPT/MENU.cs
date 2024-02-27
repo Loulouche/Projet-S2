@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class MENU : MonoBehaviour
 {
+    public bool GameIsPaused = false;
+    public GameObject MENU_PAUSE;
 
     public void PlayGame()
     {
@@ -23,18 +25,41 @@ public class MENU : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(0);
     }
+    
+    public void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        { 
+            if (GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            } 
+        }
+    }
+
+
 
 public void Pause()
 {
-Time.timeScale = 0;
+    MENU_PAUSE.SetActive(true);
+    Time.timeScale = 0f;
+    GameIsPaused = true;
 
 }
 
 public void Resume()
 {
-Time.timeScale = 1;
+
+    MENU_PAUSE.SetActive(false);
+    Time.timeScale = 1f;
+    GameIsPaused = false;
 
 }
+
 
 
 

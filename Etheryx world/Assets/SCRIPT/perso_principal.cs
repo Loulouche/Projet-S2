@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class perso_principal : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class perso_principal : MonoBehaviour
     public float speed = 5f;
     private Vector2 mouvement;
     public Animator animator;
+
+    public Collider2D collision;
     
     
     void Update()
@@ -26,4 +30,12 @@ public class perso_principal : MonoBehaviour
 
         
     }
+
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    { 
+        SceneManager.LoadSceneAsync(2); 
+    }
+
+
 }
