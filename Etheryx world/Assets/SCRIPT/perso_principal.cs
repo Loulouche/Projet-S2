@@ -18,30 +18,22 @@ public bool EpeeActive = false;
     
     
     void Update()
-    {
-        mouvement.x = Input.GetAxisRaw("Horizontal");
+    { 
+        mouvement.x = Input.GetAxisRaw("Horizontal"); 
         mouvement.y = Input.GetAxisRaw("Vertical");
-
-
-            if (!EpeeActive)
-            {
-                animator.SetFloat("Horizontal", mouvement.x);
-                animator.SetFloat("Vertical", mouvement.y);
-                animator.SetFloat("Speed", mouvement.magnitude);
-            }
-            
+        animator.SetFloat("Horizontal", mouvement.x);
+        animator.SetFloat("Vertical", mouvement.y);
+        animator.SetFloat("Speed", mouvement.magnitude);
         
-        
-            rb.MovePosition(rb.position + mouvement * speed * Time.deltaTime);
+        rb.MovePosition(rb.position + mouvement * speed * Time.deltaTime);
+          
     }
 
     
     void RamasserEpee()
-    
-{
-EpeeActive = true;
-
-}
+    { 
+        EpeeActive = true;
+    }
 
 
 
