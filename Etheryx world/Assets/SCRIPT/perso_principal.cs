@@ -11,7 +11,7 @@ public class perso_principal : MonoBehaviour
     public float speed = 5f;
     private Vector2 mouvement;
     public Animator animator;
-public bool EpeeActive = false;
+
 
 
 
@@ -30,10 +30,7 @@ public bool EpeeActive = false;
     }
 
     
-    void RamasserEpee()
-    { 
-        EpeeActive = true;
-    }
+
 
 
 
