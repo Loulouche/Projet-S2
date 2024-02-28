@@ -20,7 +20,8 @@ public class MoveToLevel : MonoBehaviour
 
 
 public IEnumerator loadNextScene()
-{ 
+{
+    
     fadeSystem.SetTrigger("FadeIn"); 
     yield return new WaitForSeconds(1f);
     SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);

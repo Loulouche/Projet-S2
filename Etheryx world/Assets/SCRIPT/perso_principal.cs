@@ -13,10 +13,6 @@ public class perso_principal : MonoBehaviour
     public Animator animator;
 
 
-
-
-    
-    
     void Update()
     { 
         mouvement.x = Input.GetAxisRaw("Horizontal"); 
@@ -25,11 +21,18 @@ public class perso_principal : MonoBehaviour
         animator.SetFloat("Vertical", mouvement.y);
         animator.SetFloat("Speed", mouvement.magnitude);
         
+
+
         rb.MovePosition(rb.position + mouvement * speed * Time.deltaTime);
+
+
+
           
     }
 
-    
+
+
+
 
 
 
