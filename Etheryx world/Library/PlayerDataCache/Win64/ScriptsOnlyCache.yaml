@@ -18,7 +18,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -65,6 +64,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
+    - UnityEngine.UI.RawImage
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
@@ -184,6 +184,18 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: SOUND
     methodName: ChangeVolume
@@ -193,9 +205,45 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: MENU
     methodName: Resume
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: MENU
     methodName: GoToMenu
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: MENU
+    methodName: GoToMenu
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: SOUND
+    methodName: ChangeVolume
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -221,10 +269,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -238,49 +282,51 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1572}
     - Class: 114
-      Script: {instanceID: 2712}
+      Script: {instanceID: 2552}
     - Class: 114
-      Script: {instanceID: 2836}
+      Script: {instanceID: 2722}
     - Class: 114
-      Script: {instanceID: 2908}
+      Script: {instanceID: 2846}
     - Class: 114
-      Script: {instanceID: 2928}
+      Script: {instanceID: 2918}
     - Class: 114
-      Script: {instanceID: 3000}
+      Script: {instanceID: 2938}
     - Class: 114
-      Script: {instanceID: 3178}
+      Script: {instanceID: 3010}
     - Class: 114
-      Script: {instanceID: 3550}
+      Script: {instanceID: 3188}
     - Class: 114
-      Script: {instanceID: 4092}
+      Script: {instanceID: 3560}
     - Class: 114
-      Script: {instanceID: 4400}
+      Script: {instanceID: 4102}
     - Class: 114
-      Script: {instanceID: 4510}
+      Script: {instanceID: 4410}
     - Class: 114
-      Script: {instanceID: 4572}
+      Script: {instanceID: 4520}
     - Class: 114
-      Script: {instanceID: 4762}
+      Script: {instanceID: 4582}
     - Class: 114
-      Script: {instanceID: 6086}
+      Script: {instanceID: 4772}
     - Class: 114
-      Script: {instanceID: 6106}
+      Script: {instanceID: 6096}
     - Class: 114
-      Script: {instanceID: 6212}
+      Script: {instanceID: 6116}
     - Class: 114
-      Script: {instanceID: 6936}
+      Script: {instanceID: 6222}
     - Class: 114
-      Script: {instanceID: 6982}
+      Script: {instanceID: 6946}
     - Class: 114
-      Script: {instanceID: 7210}
+      Script: {instanceID: 6992}
     - Class: 114
-      Script: {instanceID: 7634}
+      Script: {instanceID: 7220}
     - Class: 114
-      Script: {instanceID: 7646}
+      Script: {instanceID: 7644}
     - Class: 114
-      Script: {instanceID: 9020}
+      Script: {instanceID: 7656}
     - Class: 114
-      Script: {instanceID: 9656}
+      Script: {instanceID: 9030}
+    - Class: 114
+      Script: {instanceID: 9666}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -335,43 +381,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1572}
     - Class: 114
-      Script: {instanceID: 2388}
+      Script: {instanceID: 2398}
     - Class: 114
-      Script: {instanceID: 2712}
+      Script: {instanceID: 2552}
     - Class: 114
-      Script: {instanceID: 2908}
+      Script: {instanceID: 2722}
     - Class: 114
-      Script: {instanceID: 2928}
+      Script: {instanceID: 2918}
     - Class: 114
-      Script: {instanceID: 3178}
+      Script: {instanceID: 2938}
     - Class: 114
-      Script: {instanceID: 3550}
+      Script: {instanceID: 3188}
     - Class: 114
-      Script: {instanceID: 4510}
+      Script: {instanceID: 3560}
     - Class: 114
-      Script: {instanceID: 4572}
+      Script: {instanceID: 4520}
     - Class: 114
-      Script: {instanceID: 4746}
+      Script: {instanceID: 4582}
     - Class: 114
-      Script: {instanceID: 4892}
+      Script: {instanceID: 4756}
     - Class: 114
-      Script: {instanceID: 5246}
+      Script: {instanceID: 4772}
     - Class: 114
-      Script: {instanceID: 6086}
+      Script: {instanceID: 4902}
     - Class: 114
-      Script: {instanceID: 6106}
+      Script: {instanceID: 5256}
     - Class: 114
-      Script: {instanceID: 6212}
+      Script: {instanceID: 6096}
     - Class: 114
-      Script: {instanceID: 6982}
+      Script: {instanceID: 6116}
     - Class: 114
-      Script: {instanceID: 7210}
+      Script: {instanceID: 6222}
     - Class: 114
-      Script: {instanceID: 7634}
+      Script: {instanceID: 6992}
     - Class: 114
-      Script: {instanceID: 7646}
+      Script: {instanceID: 7220}
     - Class: 114
-      Script: {instanceID: 9020}
+      Script: {instanceID: 7644}
+    - Class: 114
+      Script: {instanceID: 7656}
+    - Class: 114
+      Script: {instanceID: 9030}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -422,39 +472,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1572}
     - Class: 114
-      Script: {instanceID: 2712}
+      Script: {instanceID: 2552}
     - Class: 114
-      Script: {instanceID: 2836}
+      Script: {instanceID: 2722}
     - Class: 114
-      Script: {instanceID: 2928}
+      Script: {instanceID: 2846}
     - Class: 114
-      Script: {instanceID: 3000}
+      Script: {instanceID: 2938}
     - Class: 114
-      Script: {instanceID: 3178}
+      Script: {instanceID: 3010}
     - Class: 114
-      Script: {instanceID: 4092}
+      Script: {instanceID: 3188}
     - Class: 114
-      Script: {instanceID: 4400}
+      Script: {instanceID: 3560}
     - Class: 114
-      Script: {instanceID: 4572}
+      Script: {instanceID: 4102}
     - Class: 114
-      Script: {instanceID: 4762}
+      Script: {instanceID: 4410}
     - Class: 114
-      Script: {instanceID: 6086}
+      Script: {instanceID: 4520}
     - Class: 114
-      Script: {instanceID: 6212}
+      Script: {instanceID: 4582}
     - Class: 114
-      Script: {instanceID: 6936}
+      Script: {instanceID: 4772}
     - Class: 114
-      Script: {instanceID: 6982}
+      Script: {instanceID: 6096}
     - Class: 114
-      Script: {instanceID: 7210}
+      Script: {instanceID: 6116}
     - Class: 114
-      Script: {instanceID: 7646}
+      Script: {instanceID: 6222}
     - Class: 114
-      Script: {instanceID: 9020}
+      Script: {instanceID: 6946}
     - Class: 114
-      Script: {instanceID: 9656}
+      Script: {instanceID: 6992}
+    - Class: 114
+      Script: {instanceID: 7220}
+    - Class: 114
+      Script: {instanceID: 7656}
+    - Class: 114
+      Script: {instanceID: 9030}
+    - Class: 114
+      Script: {instanceID: 9666}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1951,4 +2009,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/MENU.unity
   - Assets/Scenes/GAME.unity
   - "Assets/Scenes/Maison Qu\xEAte 1.unity"
-  playerPath: C:/Users/linel/Projet-S2-TEST/Etheryx world.exe
+  playerPath: C:/Users/linel/EPITA/Etheryx world.exe
