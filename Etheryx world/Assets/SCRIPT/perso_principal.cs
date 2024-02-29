@@ -11,10 +11,8 @@ public class perso_principal : MonoBehaviour
     public float speed = 5f;
     private Vector2 mouvement;
     public Animator animator;
+public MENU script;
 
-
-
-    private bool modif = false;
     private void Start()
     {
         
@@ -25,20 +23,26 @@ public class perso_principal : MonoBehaviour
         
     }
     void Update()
-    { 
-    
-        mouvement.x = Input.GetAxisRaw("Horizontal"); 
-        mouvement.y = Input.GetAxisRaw("Vertical");
+    {
+
+        if (!script.GameIsPaused)
+        {
+            mouvement.x = Input.GetAxisRaw("Horizontal"); 
+            mouvement.y = Input.GetAxisRaw("Vertical");
         
-        animator.SetFloat("Horizontal", mouvement.x);
-        animator.SetFloat("Vertical", mouvement.y);
-        animator.SetFloat("Speed", mouvement.magnitude);
+            animator.SetFloat("Horizontal", mouvement.x);
+            animator.SetFloat("Vertical", mouvement.y);
+            animator.SetFloat("Speed", mouvement.magnitude);
 
 
-        PlayerPrefs.SetFloat("x", transform.position.x);
-        PlayerPrefs.SetFloat("y", transform.position.y);
+            PlayerPrefs.SetFloat("x", transform.position.x);
+            PlayerPrefs.SetFloat("y", transform.position.y);
 
-        rb.MovePosition(rb.position + mouvement * speed * Time.deltaTime);
+            rb.MovePosition(rb.position + mouvement * speed * Time.deltaTime);
+        }
+
+
+
 
     }
 

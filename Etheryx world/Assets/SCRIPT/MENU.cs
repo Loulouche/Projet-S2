@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class MENU : MonoBehaviour
 {
     public bool GameIsPaused = false;
+    public bool MenuHelpActive = false;
     public GameObject MENU_PAUSE;
-
+    public GameObject MENU_HELP;
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(1);
@@ -30,21 +31,28 @@ public class MENU : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)) 
         { 
-            if (GameIsPaused)
+            if (!MenuHelpActive)
             {
-                Resume();
+                if (GameIsPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                } 
             }
-            else
-            {
-                Pause();
-            } 
+            
         }
+        
+        
     }
 
 
 
 public void Pause()
 {
+    
     MENU_PAUSE.SetActive(true);
     Time.timeScale = 0f;
     GameIsPaused = true;
@@ -61,8 +69,21 @@ public void Resume()
 }
 
 
+public void HelpBoutton()
+{
+    MENU_PAUSE.SetActive(false);
+    MENU_HELP.SetActive(true);
+    MenuHelpActive = true;
+}
 
 
+public void NoHelpBoutton()
+{
+    MENU_HELP.SetActive(false);
+    MENU_PAUSE.SetActive(true);
+    
+    MenuHelpActive = false;
+}
 
 
 
