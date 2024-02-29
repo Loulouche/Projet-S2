@@ -10,6 +10,8 @@ public class MENU : MonoBehaviour
     public bool MenuHelpActive = false;
     public GameObject MENU_PAUSE;
     public GameObject MENU_HELP;
+public perso_principal script;
+
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(1);
@@ -20,6 +22,7 @@ public class MENU : MonoBehaviour
     }
     public void QuitGame()
     {
+
         Application.Quit();
     }
     public void GoToMenu()
