@@ -10,15 +10,24 @@ public GameObject[] objects;
     {
         foreach (var element in objects)
         {
-            
-            DontDestroyOnLoad(element);
-            
+            if (element == null)
+            {
+                if (transform.parent == null)
+                {
+                    DontDestroyOnLoad(element);
+                }
+                else
+                {
+                    Debug.LogWarning("L'objet " + element.name + "ne ser pas consevé");
+                }
+            }
+            else
+            {
+                Destroy(element);
+            }
+
         }
-
         
-
-
-
     }
 
   

@@ -84150,10 +84150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29523b6524ae955498b09eb6bbc88088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1016760592}
-  speed: 4
-  animator: {fileID: 1016760589}
-  script: {fileID: 0}
+  moveSpeed: 0
+  timeBetweenattack: 0
 --- !u!50 &1016760592
 Rigidbody2D:
   serializedVersion: 4
@@ -87312,8 +87310,8 @@ GameObject:
   - component: {fileID: 1140945690}
   - component: {fileID: 1140945693}
   - component: {fileID: 1140945695}
-  - component: {fileID: 1140945696}
   - component: {fileID: 1140945697}
+  - component: {fileID: 1140945696}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -87458,15 +87456,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140945689}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29523b6524ae955498b09eb6bbc88088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1333760159}
-  speed: 5
-  animator: {fileID: 1333760162}
-  script: {fileID: 1140945693}
+  moveSpeed: 250
+  timeBetweenattack: 0
 --- !u!1 &1146841790
 GameObject:
   m_ObjectHideFlags: 0
@@ -92257,19 +92253,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330887546}
   m_CullTransparentMesh: 1
---- !u!50 &1333760159 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 19188352166484009, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
-  m_PrefabInstance: {fileID: 19188351278696630}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1333760161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 19188352166483991, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
-  m_PrefabInstance: {fileID: 19188351278696630}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1333760162 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 19188352166483988, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
   m_PrefabInstance: {fileID: 19188351278696630}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1339158918
@@ -143650,6 +143636,10 @@ PrefabInstance:
     - target: {fileID: 19188352166483986, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
       propertyPath: speed
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 19188352166483986, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
+      propertyPath: moveSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 19188352166483991, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
       propertyPath: m_RootOrder

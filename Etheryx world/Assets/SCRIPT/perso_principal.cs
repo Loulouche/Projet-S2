@@ -6,51 +6,70 @@ using UnityEngine.UI;
 
 public class perso_principal : MonoBehaviour
 {
-    
-    public Rigidbody2D rb;
-    public float speed = 5f;
-    private Vector2 mouvement;
-    public Animator animator;
-public MENU script;
+
+    [Header("Component")] 
+    private Rigidbody2D rb;
+
+    private Animator anim;
+
+    [Header("Stat")] [SerializeField] 
+    private float moveSpeed;
+
+    [Header("Attack")]
+    private float attacktime;
+
+    [SerializeField] 
+    private float timeBetweenattack;
 
     private void Start()
     {
-        
-        
-        transform.position = new Vector2(PlayerPrefs.GetFloat("x"), PlayerPrefs.GetFloat("y"));
-       
-
-        
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
     void Update()
     {
-
-        if (!script.GameIsPaused)
-        {
-            mouvement.x = Input.GetAxisRaw("Horizontal"); 
-            mouvement.y = Input.GetAxisRaw("Vertical");
-        
-            animator.SetFloat("Horizontal", mouvement.x);
-            animator.SetFloat("Vertical", mouvement.y);
-            animator.SetFloat("Speed", mouvement.magnitude);
-
-
-            PlayerPrefs.SetFloat("x", transform.position.x);
-            PlayerPrefs.SetFloat("y", transform.position.y);
-
-            rb.MovePosition(rb.position + mouvement * speed * Time.deltaTime);
-        }
-
-
-
-
+        Attack();
     }
 
+    private void Attack()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Time.time >= attacktime)
+            {
+                anim.SetTrigger("attack");
 
+                attacktime = Time.time + timeBetweenattack;
+            }
+        }
+    }
+    
+    private void FixedUpdate()
+    {
+        Move();
+    }
+    
+    void Move()
+    {
+        if (Input.GetAxis("Horizontal") > 0.1 || Input.GetAxis("Horizontal") < -0.1 ||
+            Input.GetAxis("Vertical") > 0.1 || Input.GetAxis("Vertical") < -0.1)
+        {
+            anim.SetFloat("x", Input.GetAxis("Horizontal"));
+            anim.SetFloat("y", Input.GetAxis("Vertical"));
+        }
+        
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
 
+        rb.velocity = new Vector2(x, y) * moveSpeed * Time.fixedDeltaTime;
 
+        rb.velocity.Normalize();
 
-
-
+        if (x != 0 || y != 0)
+        {
+            anim.SetFloat("H", x);
+            anim.SetFloat("V", y);
+        }
+    }
 
 }
