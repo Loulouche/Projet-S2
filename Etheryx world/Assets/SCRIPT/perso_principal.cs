@@ -23,6 +23,9 @@ public class perso_principal : MonoBehaviour
 
     private void Start()
     {
+        
+        transform.position = new Vector2(PlayerPrefs.GetFloat("x"), PlayerPrefs.GetFloat("y"));
+
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -63,6 +66,8 @@ public class perso_principal : MonoBehaviour
 
         rb.velocity = new Vector2(x, y) * moveSpeed * Time.fixedDeltaTime;
 
+        PlayerPrefs.SetFloat("x", transform.position.x);
+        PlayerPrefs.SetFloat("y", transform.position.y);
         rb.velocity.Normalize();
 
         if (x != 0 || y != 0)

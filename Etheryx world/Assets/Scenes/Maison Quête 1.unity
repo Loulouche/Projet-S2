@@ -5924,6 +5924,10 @@ PrefabInstance:
       propertyPath: speed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 19188352166483986, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
+      propertyPath: moveSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 19188352166483991, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7089,16 +7093,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344758600}
   m_CullTransparentMesh: 1
---- !u!95 &1412083757 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 19188352166483988, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
-  m_PrefabInstance: {fileID: 833752395}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1412083758 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 19188352166484009, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
-  m_PrefabInstance: {fileID: 833752395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1412083762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 19188352166483991, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
@@ -23065,10 +23059,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29523b6524ae955498b09eb6bbc88088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1412083758}
-  speed: 5
-  animator: {fileID: 1412083757}
-  script: {fileID: 1841798865}
+  moveSpeed: 0
+  timeBetweenattack: 0
 --- !u!114 &1841798862
 MonoBehaviour:
   m_ObjectHideFlags: 0
