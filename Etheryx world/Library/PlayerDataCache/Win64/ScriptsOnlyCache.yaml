@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - SOUND
     - SuiteLevel
     - perso_principal
+    - systeme_vie
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineFramingTransposer
@@ -18,7 +19,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -61,6 +61,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
     - UnityEngine.UI.RawImage
@@ -97,6 +98,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
     - UnityEngine.Events.PersistentListenerMode
+    - UnityEngine.RectOffset
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
@@ -290,6 +292,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6108}
     - Class: 114
+      Script: {instanceID: 6120}
+    - Class: 114
       Script: {instanceID: 6214}
     - Class: 114
       Script: {instanceID: 6938}
@@ -305,6 +309,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9022}
     - Class: 114
       Script: {instanceID: 9658}
+    - Class: 114
+      Script: {instanceID: 38312}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -491,6 +497,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9022}
     - Class: 114
       Script: {instanceID: 9658}
+    - Class: 114
+      Script: {instanceID: 38312}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1036,7 +1044,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: e66480f2ba4086ac440a069a512933dc
+      Hash: fa37ef9879ac86dcd807487b974cc7df
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: perso_principal
@@ -1982,6 +1990,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 0f88b01bb795c2451948eac3cc6d0caa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: systeme_vie
   platform: 19
   scenePathNames:
   - Assets/Scenes/MENU.unity

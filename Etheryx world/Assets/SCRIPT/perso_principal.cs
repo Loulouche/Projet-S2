@@ -14,6 +14,8 @@ public class perso_principal : MonoBehaviour
 
     [Header("Stat")] [SerializeField] 
     private float moveSpeed;
+	public int vie;
+	public int maxvie;
 
     [Header("Attack")]
     private float attacktime;
@@ -21,9 +23,16 @@ public class perso_principal : MonoBehaviour
     [SerializeField] 
     private float timeBetweenattack;
 
+	public static perso_principal instance;
+
+	private void Awake()
+	{
+		instance = this;
+	}
+
     private void Start()
     {
-        
+        vie = maxvie;
         transform.position = new Vector2(PlayerPrefs.GetFloat("x"), PlayerPrefs.GetFloat("y"));
 
         rb = GetComponent<Rigidbody2D>();
