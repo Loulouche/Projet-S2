@@ -23,6 +23,12 @@ public class perso_principal : MonoBehaviour
     [SerializeField] 
     private float timeBetweenattack;
 
+    private bool canMove;
+    [SerializeField] private Transform checkEnemy;
+    public LayerMask whatIsEnemy;
+
+    public float range;
+    
 	public static perso_principal instance;
 
 	private void Awake()
@@ -37,6 +43,7 @@ public class perso_principal : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        canMove = true;
     }
     void Update()
     {
@@ -49,8 +56,17 @@ public class perso_principal : MonoBehaviour
         {
             if (Time.time >= attacktime)
             {
+                rb.velocity = Vector2.zero;
                 anim.SetTrigger("attack");
 
+                StartCoroutine(Delay());
+
+                IEnumerator Delay()
+                {
+                    canMove = false;
+                    yield return new WaitForSeconds(.5f);
+                    canMove = true;
+                }
                 attacktime = Time.time + timeBetweenattack;
             }
         }
@@ -58,7 +74,8 @@ public class perso_principal : MonoBehaviour
     
     private void FixedUpdate()
     {
-        Move();
+        if (canMove)
+            Move();
     }
     
     void Move()
@@ -69,7 +86,24 @@ public class perso_principal : MonoBehaviour
             anim.SetFloat("x", Input.GetAxis("Horizontal"));
             anim.SetFloat("y", Input.GetAxis("Vertical"));
         }
-        
+
+        if (Input.GetAxis("Horizontal") > 0.1)
+        {
+            checkEnemy.position = new Vector3(transform.position.x + range, transform.position.y, 0);
+        }
+        else if (Input.GetAxis("Horizontal") < -0.1)
+        {
+            checkEnemy.position = new Vector3(transform.position.x - range, transform.position.y, 0);
+        }
+        if (Input.GetAxis("Vertical") > 0.1)
+        {
+            checkEnemy.position = new Vector3(transform.position.x, transform.position.y +range, 0);
+        }
+        else if (Input.GetAxis("Vertical") < -0.1)
+        {
+            checkEnemy.position = new Vector3(transform.position.x, transform.position.y -range, 0);
+        }
+
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
@@ -86,4 +120,14 @@ public class perso_principal : MonoBehaviour
         }
     }
 
+
+    public void OnAttack()
+    {
+        Collider2D[] enemy = Physics2D.OverlapCircleAll(checkEnemy.position, 0.5f, whatIsEnemy);
+
+        foreach (var enemy_ in enemy)
+        {
+            //degats
+        }
+    }
 }
