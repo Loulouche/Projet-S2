@@ -89885,6 +89885,37 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1237692138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1237692139}
+  m_Layer: 8
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1237692139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237692138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1546367447}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1243538106
 GameObject:
   m_ObjectHideFlags: 0
@@ -134120,6 +134151,7 @@ GameObject:
   - component: {fileID: 1546367445}
   - component: {fileID: 1546367444}
   - component: {fileID: 1546367442}
+  - component: {fileID: 1546367449}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -134142,9 +134174,13 @@ MonoBehaviour:
   speed: 100
   playerDetectRate: 0.2
   chaseRange: 5
-  attackRange: 1.1
+  attackRange: 0.75
   damage: 0
-  attaclRate: 3
+  attaclRate: 0.75
+  attackPoint: {fileID: 1237692139}
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
   nextWaypointDistance: 2
 --- !u!50 &1546367444
 Rigidbody2D:
@@ -134253,10 +134289,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546367441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.55, y: -3.92, z: 0}
+  m_LocalPosition: {x: 7.33, y: 6.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1237692139}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -134288,6 +134325,26 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!95 &1546367449
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546367441}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7abca2a3bb89254db4a64dae67a775f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1550438397
 GameObject:
   m_ObjectHideFlags: 0
@@ -144465,6 +144522,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personnage
       objectReference: {fileID: 0}
+    - target: {fileID: 19188351101906087, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 19188352166483986, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
+      propertyPath: range
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 19188352166483986, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
       propertyPath: speed
       value: 30
@@ -144524,6 +144589,10 @@ PrefabInstance:
     - target: {fileID: 19188352166484009, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
       propertyPath: m_Mass
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 575652992982723081, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3812249852581829895, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
       propertyPath: vie1

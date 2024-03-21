@@ -11,17 +11,21 @@ public class Enemy : MonoBehaviour
     private float playerDetectTime;
     public float playerDetectRate;
     public float chaseRange;
+    bool lookRight;
     
     [Header("Attack")] 
     [SerializeField] float attackRange;
     [SerializeField] int damage;
     [SerializeField] float attaclRate;
     private float lastAttackTime;
+    public Transform attackPoint;
+    public LayerMask playerLayerMask;
     
 
     [Header("Component")] 
     Rigidbody2D rb;
     private perso_principal targetPlayer;
+    Animator anim ;
     
     
     [Header("Pathfinding")] 
@@ -37,7 +41,9 @@ public class Enemy : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+		anim= GetComponent<Animator>();
         InvokeRepeating("UpdatePath", 0f, .5f);
+       
     }
 
     void OnPathComplete(Path p)
@@ -56,6 +62,14 @@ public class Enemy : MonoBehaviour
             seeker.StartPath(rb.position, targetPlayer.transform.position, OnPathComplete);
         }
     }
+    
+    private void Update()
+    {
+       if (rb.velocity.x < 0 && !lookRight || rb.velocity.x > 0 && lookRight)
+       {
+          Flip();
+       }
+    } 
 
     private void FixedUpdate()
     {
@@ -65,6 +79,8 @@ public class Enemy : MonoBehaviour
             
             if (dist < attackRange & Time.time - lastAttackTime >= attaclRate)
             {
+             	lastAttackTime= Time.time;
+             	anim.SetTrigger("attack");
                 rb.velocity = Vector2.zero;
             }
             else if (dist > attackRange)
@@ -103,7 +119,7 @@ public class Enemy : MonoBehaviour
         DetectPlayer();
     }
 
-    void DetectPlayer()
+    void DetectPlayer() //calcule la distance entre nous et l ennemi 
     {
         if (Time.time - playerDetectTime > playerDetectRate)
         {
@@ -117,18 +133,37 @@ public class Enemy : MonoBehaviour
                     if (player == targetPlayer)
                     {
                         if (dist > chaseRange)
+                    {
                             targetPlayer = null;
+                      rb.velocity= Vector2.zero;
+                      anim.SetBool("onMove", false);
+                    }
+
+             
                     }
                     else if (dist < chaseRange)
                     {
-                        if (targetPlayer == null)
-                        {
+                        if (targetPlayer == null)                
                             targetPlayer = player;
-                        }
+                   		anim.SetBool("onMove",true);
                     }
                 }
             }
         }
     }
+    void Flip()
+    {
+       lookRight = !lookRight;
+       transform.Rotate(0, 180f, 0);
+    }
 
+    void Attack()
+    {
+       Collider2D player = Physics2D.OverlapCircle(attackPoint.transform.position,0.5f, playerLayerMask);
+       if (player != null  && player.tag== "Player")
+       {
+          player.GetComponent<perso_principal>().TakeDamage(damage);
+          
+       }
+    }
 }

@@ -130,4 +130,11 @@ public class perso_principal : MonoBehaviour
             //degats
         }
     }
+    
+    public void TakeDamage( int damage)
+    {
+        {
+            vie -= damage;
+        }
+    }
 }
