@@ -12,10 +12,11 @@ public class Enemy : MonoBehaviour
     public float playerDetectRate;
     public float chaseRange;
     bool lookRight;
+	private bool onMove;
     
     [Header("Attack")] 
     [SerializeField] float attackRange;
-    [SerializeField] int damage;
+    [SerializeField] float damage;
     [SerializeField] float attaclRate;
     private float lastAttackTime;
     public Transform attackPoint;
@@ -65,10 +66,17 @@ public class Enemy : MonoBehaviour
     
     private void Update()
     {
-       if (rb.velocity.x < 0 && !lookRight || rb.velocity.x > 0 && lookRight)
-       {
-          Flip();
-       }
+        if (targetPlayer != null)
+   		{
+        	if (targetPlayer.transform.position.x > transform.position.x && lookRight)
+        	{
+            	Flip();
+        	}
+        	else if (targetPlayer.transform.position.x < transform.position.x && !lookRight)
+        	{
+            	Flip();
+        	}
+   		}
     } 
 
     private void FixedUpdate()
@@ -79,10 +87,12 @@ public class Enemy : MonoBehaviour
             
             if (dist < attackRange & Time.time - lastAttackTime >= attaclRate)
             {
-             	lastAttackTime= Time.time;
-             	anim.SetTrigger("attack");
-                rb.velocity = Vector2.zero;
-            }
+           		lastAttackTime= Time.time;
+           		anim.SetTrigger("attack");
+               	rb.velocity = Vector2.zero;
+				anim.SetBool("onMove", false);
+            	
+			}
             else if (dist > attackRange)
             {
                 if (path == null)
@@ -109,10 +119,12 @@ public class Enemy : MonoBehaviour
                 {
                     currentWayPoint++;
                 }
+				anim.SetBool("onMove", true);
             }
             else
             {
                 rb.velocity = Vector2.zero;
+				anim.SetBool("onMove", false);
             }
         }
         
@@ -163,7 +175,6 @@ public class Enemy : MonoBehaviour
        if (player != null  && player.tag== "Player")
        {
           player.GetComponent<perso_principal>().TakeDamage(damage);
-          
        }
     }
 }

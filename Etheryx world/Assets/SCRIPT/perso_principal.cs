@@ -14,8 +14,8 @@ public class perso_principal : MonoBehaviour
 
     [Header("Stat")] [SerializeField] 
     private float moveSpeed;
-	public int vie;
-	public int maxvie;
+	public float vie;
+	public float maxvie;
 
     [Header("Attack")]
     private float attacktime;
@@ -131,7 +131,7 @@ public class perso_principal : MonoBehaviour
         }
     }
     
-    public void TakeDamage( int damage)
+    public void TakeDamage( float damage)
     {
         {
             vie -= damage;
