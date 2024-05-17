@@ -67,7 +67,7 @@ public class MenuController : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("Joined Room successfully");
-        PhotonNetwork.LoadLevel(1); // Assurez-vous que la scène 1 est configurée dans les paramètres de build de Unity
+        PhotonNetwork.LoadLevel("MULTI"); // Assurez-vous que la scène 1 est configurée dans les paramètres de build de Unity
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
