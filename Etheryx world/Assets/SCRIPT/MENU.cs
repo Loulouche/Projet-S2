@@ -16,6 +16,11 @@ public perso_principal script;
     {
         SceneManager.LoadSceneAsync(1);
     }
+    public void PlayGameMulti()
+    {
+        SceneManager.LoadSceneAsync(3);
+    }
+    
     public void SettingsButton()
     {
 
