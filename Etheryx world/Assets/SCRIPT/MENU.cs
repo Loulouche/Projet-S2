@@ -12,7 +12,14 @@ public class MENU : MonoBehaviour
     public GameObject MENU_HELP;
 public perso_principal script;
 
+
+
+
     public void PlayGame()
+    {
+        SceneManager.LoadSceneAsync(2);
+    }
+ public void Home()
     {
         SceneManager.LoadSceneAsync(1);
     }
@@ -27,7 +34,6 @@ public perso_principal script;
     }
     public void QuitGame()
     {
-
         Application.Quit();
     }
     public void GoToMenu()

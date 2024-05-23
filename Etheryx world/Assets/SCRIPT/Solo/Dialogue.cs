@@ -67,8 +67,9 @@ public class Dialogue : MonoBehaviour
             StartCoroutine(TypeLine());
         }
         else
-        {
-            EndDialogue();
+        {textComponent.text = string.Empty;
+            isDialogueStarted = false;
+            Debug.Log("Dialogue ended");
         }
     }
 
