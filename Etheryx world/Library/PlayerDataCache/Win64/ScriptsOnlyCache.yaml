@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - ANIMATIONS
+    - Coin
     - Dialogue
     - ENIGME
     - Enemy
@@ -11,6 +12,7 @@ ScriptsOnlyBuild:
     - MoveToLevel
     - Player
     - RESOLUTION
+    - Restart
     - SOUND
     - SuiteLevel
     - perso_principal
@@ -33,6 +35,8 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -45,7 +49,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -76,8 +79,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -241,6 +246,9 @@ ScriptsOnlyBuild:
     methodName: HelpBoutton
   - assembly: Assembly-CSharp
     fullTypeName: MENU
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: MENU
     methodName: NoHelpBoutton
   - assembly: Assembly-CSharp
     fullTypeName: MenuController
@@ -257,6 +265,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: GameManager
     methodName: SpawnPlayer
+  - assembly: Assembly-CSharp
+    fullTypeName: ENIGME
+    methodName: CheckInput
   sceneClasses:
     Assets/Scenes/GAME.unity:
     - Class: 1
@@ -347,6 +358,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9678}
     - Class: 114
       Script: {instanceID: 10376}
+    - Class: 114
+      Script: {instanceID: 76102}
+    - Class: 114
+      Script: {instanceID: 151546}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -753,6 +768,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1598}
     - Class: 114
+      Script: {instanceID: 1828}
+    - Class: 114
       Script: {instanceID: 2978}
     - Class: 114
       Script: {instanceID: 3056}
@@ -773,6 +790,10 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5088}
     - Class: 114
+      Script: {instanceID: 5172}
+    - Class: 114
+      Script: {instanceID: 6368}
+    - Class: 114
       Script: {instanceID: 6490}
     - Class: 114
       Script: {instanceID: 6640}
@@ -792,6 +813,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9684}
     - Class: 114
       Script: {instanceID: 10376}
+    - Class: 114
+      Script: {instanceID: 151546}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2940,7 +2963,7 @@ ScriptsOnlyBuild:
     className: PunTeams
   - hash:
       serializedVersion: 2
-      Hash: ccea4bccb7d507bb32b6f248617948c1
+      Hash: 586a9505e4332abfb0cf035a5ff94118
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ENIGME
@@ -4588,6 +4611,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: da421bf3b498cfc16f17e6724f087203
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Restart
+  - hash:
+      serializedVersion: 2
+      Hash: d825e36c60887174197dec0522dc8a74
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Coin
   platform: 19
   scenePathNames:
   - Assets/Scenes/INTRO.unity
@@ -4609,4 +4644,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Maison/12 MAISON.unity
   - Assets/Scenes/Maison/13 MAISON.unity
   - Assets/Scenes/Maison/14 MAISON.unity
-  playerPath: C:/Users/louis/Desktop/Projet-S2/Etheryx world/Etheryx world.exe
+  playerPath: C:/Users/linel/Etheryx world.exe
