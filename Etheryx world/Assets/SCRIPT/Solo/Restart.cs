@@ -13,7 +13,7 @@ public class Restart : MonoBehaviour
     public List<ENIGME> enigmes; // Liste de toutes les énigmes à réinitialiser
 
     
-    private List<string> enigmeIDs = new List<string> { "enigme1", "enigme2","enigme3","enigme4","enigme5","enigme6","enigme7","enigme8","enigme9","enigme10","enigme11","enigme12"}; // Ajouter les IDs de toutes les énigmes
+    private List<string> enigmeIDs = new List<string> { "enigme1", "enigme2","enigme3","enigme4","enigme5","enigme6","enigme7","enigme8","enigme9","enigme10","enigme11","enigme12","enigme13", "enigme14"}; // Ajouter les IDs de toutes les énigmes
     
     void Start()
     {
