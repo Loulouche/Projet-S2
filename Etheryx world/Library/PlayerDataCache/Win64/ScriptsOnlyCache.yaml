@@ -10,6 +10,7 @@ ScriptsOnlyBuild:
     - MENU
     - MenuController
     - MoveToLevel
+    - OpenImage
     - Player
     - RESOLUTION
     - Restart
@@ -47,6 +48,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -236,9 +238,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: MENU
     methodName: Home
-  - assembly: Assembly-CSharp
-    fullTypeName: MENU
-    methodName: QuitGame
   - assembly: Assembly-CSharp
     fullTypeName: MENU
     methodName: HelpBoutton
@@ -1472,6 +1471,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9688}
     - Class: 114
       Script: {instanceID: 10380}
+    - Class: 114
+      Script: {instanceID: 117822}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -4860,6 +4861,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 3103e95d69402500c2929b7ce1b451bf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OpenImage
   platform: 19
   scenePathNames:
   - Assets/Scenes/INTRO.unity
