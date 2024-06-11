@@ -15,7 +15,7 @@ C:/Users/linel/Projet-S2/Etheryx world
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63551
+49956
 Successfully changed project path to: C:/Users/linel/Projet-S2/Etheryx world
 C:/Users/linel/Projet-S2/Etheryx world
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/Users/linel/Projet-S2/Etheryx world
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [3180] Host "[IP] 192.168.0.29 [Port] 0 [Flags] 2 [Guid] 3248518053 [EditorId] 3248518053 [Version] 1048832 [Id] WindowsEditor(7,PC_LINE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [27156] Host "[IP] 192.168.0.29 [Port] 0 [Flags] 2 [Guid] 3588053970 [EditorId] 3588053970 [Version] 1048832 [Id] WindowsEditor(7,PC_LINE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [3180] Host "[IP] 192.168.0.29 [Port] 0 [Flags] 2 [Guid] 3248518053 [EditorId] 3248518053 [Version] 1048832 [Id] WindowsEditor(7,PC_LINE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [27156] Host "[IP] 192.168.0.29 [Port] 0 [Flags] 2 [Guid] 3588053970 [EditorId] 3588053970 [Version] 1048832 [Id] WindowsEditor(7,PC_LINE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 195.17 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 253.35 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.16f1 (4016570cf34f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/Resources/UnitySubsystems
@@ -67,92 +67,93 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56688
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56152
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007794 seconds.
+Registered in 0.005919 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 215.07 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 105.27 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.179 seconds
+- Completed reload, in  0.605 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1179ms)
-		BeginReloadAssembly (115ms)
+	ReloadAssembly (606ms)
+		BeginReloadAssembly (64ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (900ms)
-			LoadAssemblies (111ms)
+		EndReloadAssembly (448ms)
+			LoadAssemblies (62ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (147ms)
+			SetupTypeCache (87ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (48ms)
-			SetupLoadedEditorAssemblies (612ms)
+			RebuildScriptCaches (24ms)
+			SetupLoadedEditorAssemblies (292ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (116ms)
+				InitializePlatformSupportModulesInManaged (52ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (215ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (186ms)
-				ProcessInitializeOnLoadMethodAttributes (92ms)
+				RefreshPlugins (105ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (85ms)
+				ProcessInitializeOnLoadMethodAttributes (48ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.016848 seconds.
+Registered in 0.010992 seconds.
+Android Extension - Scanning For ADB Devices 4540 ms
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\linel\Projet-S2\Etheryx world\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\linel\Projet-S2\Etheryx world\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 224.47 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 107.69 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.290 seconds
+- Completed reload, in  1.126 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2291ms)
-		BeginReloadAssembly (280ms)
+	ReloadAssembly (1127ms)
+		BeginReloadAssembly (97ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (12ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (135ms)
-		EndReloadAssembly (1826ms)
-			LoadAssemblies (145ms)
+			CreateAndSetChildDomain (20ms)
+		EndReloadAssembly (926ms)
+			LoadAssemblies (88ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (427ms)
+			SetupTypeCache (232ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (122ms)
-			SetupLoadedEditorAssemblies (1026ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (499ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (29ms)
+				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (225ms)
-				BeforeProcessingInitializeOnLoad (246ms)
-				ProcessInitializeOnLoadAttributes (447ms)
-				ProcessInitializeOnLoadMethodAttributes (67ms)
-				AfterProcessingInitializeOnLoad (12ms)
+				RefreshPlugins (108ms)
+				BeforeProcessingInitializeOnLoad (91ms)
+				ProcessInitializeOnLoadAttributes (243ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
+				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.14 seconds
-Refreshing native plugins compatible for Editor in 2.20 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.55 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4633 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 59 unused Assets / (158.6 KB). Loaded Objects now: 5086.
 Memory consumption went from 173.9 MB to 173.8 MB.
-Total: 5.044100 ms (FindLiveObjects: 0.430000 ms CreateObjectMapping: 0.270500 ms MarkObjects: 4.161400 ms  DeleteObjects: 0.180000 ms)
+Total: 3.769900 ms (FindLiveObjects: 0.356600 ms CreateObjectMapping: 0.162500 ms MarkObjects: 2.994400 ms  DeleteObjects: 0.255300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -167,156 +168,55 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1143802.846990 seconds.
-  path: Assets/IIMAGES/gfx/Perso_Monstre_ 1.png
-  artifactKey: Guid(9db093c3445eb3d4a947868e57e2e90a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/gfx/Perso_Monstre_ 1.png using Guid(9db093c3445eb3d4a947868e57e2e90a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d8f88d7f801076907eb13f2272472e4') in 0.274072 seconds 
+  Time since last request: 154.856446 seconds.
+  path: Assets/Scenes/Maison/12 MAISON.unity
+  artifactKey: Guid(9d0176f20ae52fc4a82256753cf69805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maison/12 MAISON.unity using Guid(9d0176f20ae52fc4a82256753cf69805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '003798f0d51e16cd3aa08aec02f847de') in 0.017733 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 377.191751 seconds.
-  path: Assets/Scenes/GAME.unity
-  artifactKey: Guid(b74e149fc725a644e8dd54f51994b379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/GAME.unity using Guid(b74e149fc725a644e8dd54f51994b379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c34eb4c5481d44eaecaee4dc820e554') in 0.016496 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.530525 seconds.
-  path: Assets/Scenes/Maison/2 MAISON.unity
-  artifactKey: Guid(ed2b58f6925a53c4bb687d8fed2987ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maison/2 MAISON.unity using Guid(ed2b58f6925a53c4bb687d8fed2987ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a34e9f2c9aac52320f19d20dae16734') in 0.018766 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 132.021730 seconds.
-  path: Assets/IIMAGES/gfx/Perso_-_PNJ 1.png
-  artifactKey: Guid(94df051253e4f7f4b9ca1c2902d87c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/gfx/Perso_-_PNJ 1.png using Guid(94df051253e4f7f4b9ca1c2902d87c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a370be2276d07a8c358b152142a8bef') in 0.354729 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.021816 seconds.
-  path: Assets/IIMAGES/gfx/Perso_-_PNJ.png
-  artifactKey: Guid(4c62e43d79bcd274fb3c56300d2ac1ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/gfx/Perso_-_PNJ.png using Guid(4c62e43d79bcd274fb3c56300d2ac1ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60a3ec83ac2c25be17f9cfb68cd182c4') in 0.090994 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.527008 seconds.
-  path: Assets/IIMAGES/gfx/Perso_-_PNJ 1.png
-  artifactKey: Guid(94df051253e4f7f4b9ca1c2902d87c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/gfx/Perso_-_PNJ 1.png using Guid(94df051253e4f7f4b9ca1c2902d87c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e05a8b22fb378d820f606b81dd5cffc1') in 0.067916 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 21.371469 seconds.
-  path: Assets/IIMAGES/gfx/Perso_-_PNJ 1.png
-  artifactKey: Guid(94df051253e4f7f4b9ca1c2902d87c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/gfx/Perso_-_PNJ 1.png using Guid(94df051253e4f7f4b9ca1c2902d87c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53bcd65e4fae48a7ea0a367947833619') in 0.028641 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.788426 seconds.
-  path: Assets/IIMAGES/gfx/Perso_-_Gobelin_.png
-  artifactKey: Guid(60c31d0227f977542a6534991a42fc7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/gfx/Perso_-_Gobelin_.png using Guid(60c31d0227f977542a6534991a42fc7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ce7305d07b058bf13a44a6043a4c670') in 0.219637 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 171.774928 seconds.
-  path: Assets/IIMAGES/gfx/Perso_-_PNJ 1.png
-  artifactKey: Guid(94df051253e4f7f4b9ca1c2902d87c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/gfx/Perso_-_PNJ 1.png using Guid(94df051253e4f7f4b9ca1c2902d87c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa0011f3985b5f8599eed16d2a9aef3d') in 0.256719 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 135.625828 seconds.
-  path: Assets/IIMAGES/gfx/Perso_-_PNJ 1.png
-  artifactKey: Guid(94df051253e4f7f4b9ca1c2902d87c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/gfx/Perso_-_PNJ 1.png using Guid(94df051253e4f7f4b9ca1c2902d87c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c01c907fad3df896324f29562ef1426a') in 0.253093 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 20.648564 seconds.
+  Time since last request: 0.000028 seconds.
   path: Assets/Scenes/Maison/1 MAISON.unity
   artifactKey: Guid(bcb3894a56c7be5429631a1d53c58c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maison/1 MAISON.unity using Guid(bcb3894a56c7be5429631a1d53c58c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f10545e1e1609cea9c7b73101982315') in 0.012768 seconds 
+Start importing Assets/Scenes/Maison/1 MAISON.unity using Guid(bcb3894a56c7be5429631a1d53c58c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa5179d272ea6f00d55b06400f3adfdc') in 0.008406 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 12.024425 seconds.
+  Time since last request: 17.667067 seconds.
   path: Assets/Scenes/Maison/2 MAISON.unity
   artifactKey: Guid(ed2b58f6925a53c4bb687d8fed2987ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maison/2 MAISON.unity using Guid(ed2b58f6925a53c4bb687d8fed2987ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0477aa33943e1c1ed2819960573b60b7') in 0.010758 seconds 
+Start importing Assets/Scenes/Maison/2 MAISON.unity using Guid(ed2b58f6925a53c4bb687d8fed2987ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd717d6f20eda786fbc0bb93dccaee6a') in 0.009244 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 24.244767 seconds.
-  path: Assets/BOUTTONS/Personnage.prefab
-  artifactKey: Guid(61888eb70b8b38e439f70035e1bb2941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BOUTTONS/Personnage.prefab using Guid(61888eb70b8b38e439f70035e1bb2941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c2b09988417777d93f44f8617b7c061') in 0.216415 seconds 
+  Time since last request: 14.274526 seconds.
+  path: Assets/Scenes/Maison/5 MAISON.unity
+  artifactKey: Guid(c5b5cc5d5ed56a940b5c3a17440029f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maison/5 MAISON.unity using Guid(c5b5cc5d5ed56a940b5c3a17440029f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73ed64542c94af1004c3b7b7063766f2') in 0.025063 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 136.877083 seconds.
-  path: Assets/IIMAGES/gfx/Perso_-_PNJ 1.png
-  artifactKey: Guid(94df051253e4f7f4b9ca1c2902d87c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/gfx/Perso_-_PNJ 1.png using Guid(94df051253e4f7f4b9ca1c2902d87c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3bb711ffb85e78af976cac554ec0811') in 0.070392 seconds 
+  Time since last request: 5.336770 seconds.
+  path: Assets/Scenes/Maison/6 MAISON.unity
+  artifactKey: Guid(b985cb1b986d6034db0017b38c8415ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maison/6 MAISON.unity using Guid(b985cb1b986d6034db0017b38c8415ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b44dcbebe419a950259a6eba3479d896') in 0.008683 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.874779 seconds.
-  path: Assets/IIMAGES/gfx/Perso_-_PNJ 2.png
-  artifactKey: Guid(2e437a56bffaf3746894dd780bcf6034) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/gfx/Perso_-_PNJ 2.png using Guid(2e437a56bffaf3746894dd780bcf6034) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08567afee4c062ef2b72db0a515d9ded') in 0.362374 seconds 
+  Time since last request: 20.221449 seconds.
+  path: Assets/Scenes/Maison/8 MAISON.unity
+  artifactKey: Guid(6e587257b577e4042b7adb4c0dc9b50b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maison/8 MAISON.unity using Guid(6e587257b577e4042b7adb4c0dc9b50b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ada3ff1b454cfbcb4e4fcc8db6c1142a') in 0.009463 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 90.075148 seconds.
-  path: Assets/IIMAGES/gfx/Perso_-_PNJ (1).png
-  artifactKey: Guid(ef5ef1cbc5b301841b4524fb49acad7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/gfx/Perso_-_PNJ (1).png using Guid(ef5ef1cbc5b301841b4524fb49acad7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16ad1568398a9f184dd9ec6f6ef1bdab') in 0.062618 seconds 
+  Time since last request: 6.972432 seconds.
+  path: Assets/Scenes/Maison/9 MAISON.unity
+  artifactKey: Guid(e102f4d4c84036943b27c9caef61e635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maison/9 MAISON.unity using Guid(e102f4d4c84036943b27c9caef61e635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1623247559c85e88685ab6aa99120d0a') in 0.008631 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 87.911374 seconds.
-  path: Assets/Scenes/Maison/2 MAISON.unity
-  artifactKey: Guid(ed2b58f6925a53c4bb687d8fed2987ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maison/2 MAISON.unity using Guid(ed2b58f6925a53c4bb687d8fed2987ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da80c925c102a7ed6a18e4869151687a') in 0.003817 seconds 
+  Time since last request: 12.267348 seconds.
+  path: Assets/Scenes/Maison/10 MAISON.unity
+  artifactKey: Guid(108fc316b4504c6498f0287bdf8c9c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maison/10 MAISON.unity using Guid(108fc316b4504c6498f0287bdf8c9c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c56a618c6db7d7edf1e9965aff76949a') in 0.008922 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.733595 seconds.
-  path: Assets/Scenes/Maison/3 MAISON.unity
-  artifactKey: Guid(149721c842d23874b85c0e9bc0073663) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Maison/3 MAISON.unity using Guid(149721c842d23874b85c0e9bc0073663) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2cb53b1fa43fbee3294e86c14a3f6ae') in 0.078959 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 567.736004 seconds.
-  path: Assets/IIMAGES/perso maison
-  artifactKey: Guid(c9b93f478fcba7c4d873b9ea363e9f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/perso maison using Guid(c9b93f478fcba7c4d873b9ea363e9f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9d7627f3961bfba3d9745aa4af613e8') in 0.024157 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.865519 seconds.
-  path: Assets/IIMAGES/perso maison/Perso_-_PNJ (1).png
-  artifactKey: Guid(77d06bcb3ea097d4ab2f60874489bb27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/perso maison/Perso_-_PNJ (1).png using Guid(77d06bcb3ea097d4ab2f60874489bb27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba49fc0708655dd5f2c7894304c2122f') in 0.129651 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/IIMAGES/perso maison/Perso_-_PNJ (5).png
-  artifactKey: Guid(3b201af4525fc6249aab604cab270f3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/perso maison/Perso_-_PNJ (5).png using Guid(3b201af4525fc6249aab604cab270f3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fbba58aed02f7d3a5203b6ecbfb7bea') in 0.100108 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/IIMAGES/perso maison/Perso_-_PNJ (7).png
-  artifactKey: Guid(786dad995e55a344e8483ff5a4377d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/perso maison/Perso_-_PNJ (7).png using Guid(786dad995e55a344e8483ff5a4377d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26a65d773abdebef5e98b066b027bdeb') in 0.090528 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/IIMAGES/perso maison/Perso_-_PNJ (6).png
-  artifactKey: Guid(c320eb8d308948b45969ce863d23fd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/perso maison/Perso_-_PNJ (6).png using Guid(c320eb8d308948b45969ce863d23fd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08c1a8ec14c1846a08ed840e50aabc50') in 0.074267 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/IIMAGES/perso maison/Perso_-_PNJ (10).png
-  artifactKey: Guid(4528bd5567be7c2439fef3d960aea049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/perso maison/Perso_-_PNJ (10).png using Guid(4528bd5567be7c2439fef3d960aea049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53fc8903870938d4e330a2c4024657d0') in 0.095639 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/IIMAGES/perso maison/Perso_-_PNJ (4).png
-  artifactKey: Guid(b796dd312deadc04f9d9d2d4839e0867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/IIMAGES/perso maison/Perso_-_PNJ (4).png using Guid(b796dd312deadc04f9d9d2d4839e0867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9fee2240bc3ff8d5abf071ac5b61763') in 0.094476 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  Time since last request: 8.200298 seconds.
+  path: Assets/Scenes/Maison/11 MAISON.unity
+  artifactKey: Guid(95866e54490d4de40a299c3593843428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Maison/11 MAISON.unity using Guid(95866e54490d4de40a299c3593843428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f38100de90f432fb7b0a015e87e13041') in 0.009176 seconds 
