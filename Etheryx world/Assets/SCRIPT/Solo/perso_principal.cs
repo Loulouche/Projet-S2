@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class perso_principal : MonoBehaviour
 {
+    
+    public GameObject MENU_DIE;
     [Header("Component")]
     private Rigidbody2D rb;
     private Animator anim;
@@ -24,8 +26,8 @@ public class perso_principal : MonoBehaviour
     [SerializeField] private Transform checkEnemy;
     public LayerMask whatIsEnemy;
     public float range;
-	[SerializeField] float Damage;
-    
+    [SerializeField] float Damage;
+
     public static perso_principal instance;
 
     private void Awake()
@@ -35,7 +37,7 @@ public class perso_principal : MonoBehaviour
 
     private void Start()
     {
-        vie = maxvie; 
+        vie = PlayerPrefs.GetFloat("PlayerLife", maxvie); // Charger la vie depuis PlayerPrefs
         Debug.Log("Initialisation de la vie: " + vie);
         transform.position = new Vector2(PlayerPrefs.GetFloat("x"), PlayerPrefs.GetFloat("y"));
 
@@ -70,13 +72,13 @@ public class perso_principal : MonoBehaviour
             }
         }
     }
-    
+
     private void FixedUpdate()
     {
         if (canMove)
             Move();
     }
-    
+
     void Move()
     {
         if (Input.GetAxis("Horizontal") > 0.1 || Input.GetAxis("Horizontal") < -0.1 ||
@@ -128,11 +130,30 @@ public class perso_principal : MonoBehaviour
             enemy_.GetComponent<Enemy>().Takedamage(Damage);
         }
     }
-    
+
     public void TakeDamage(float damage)
     {
         vie -= damage;
         Debug.Log("Vie après avoir pris des dégâts: " + vie);
         Debug.Log("Dégâts reçus: " + damage);
+
+        // Sauvegarder la vie actuelle dans PlayerPrefs
+        PlayerPrefs.SetFloat("PlayerLife", vie);
+
+        // Vérifier si le joueur est mort
+        if (vie <= 0)
+        {
+            MENU_DIE.SetActive(true);
+            Time.timeScale = 0f;
+            // Gérer le code pour la mort du joueur (rechargement de scène, etc.)
+            // Exemple:
+            // SceneManager.LoadScene("GameOverScene");
+        }
+    }
+
+    public void ResetPlayerLife()
+    {
+        vie = maxvie; // Réinitialiser la vie à sa valeur maximale
+        PlayerPrefs.SetFloat("PlayerLife", vie); // Sauvegarder la vie dans PlayerPrefs
     }
 }
