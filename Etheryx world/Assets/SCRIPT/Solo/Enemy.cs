@@ -10,8 +10,6 @@ public class Enemy : MonoBehaviour
     private float playerDetectTime;
     public float playerDetectRate;
     public float chaseRange;
-    bool lookRight;
-    private bool onMove;
 
     [Header("Attack")]
     [SerializeField] float attackRange;
@@ -20,11 +18,11 @@ public class Enemy : MonoBehaviour
     private float lastAttackTime;
     public Transform attackPoint;
     public LayerMask playerLayerMask;
-    private bool isAttacking; // Nouveau booléen pour gérer l'état d'attaque
-    private bool wasattacking; // Nouveau booléen pour indiquer si l'ennemi attaquait précédemment
-    public float attackInterval = 0.3f; // Intervalle fixe entre les coups
-    public float minAttackDuration = 1f; // Durée minimum de l'attaque
-    public float maxAttackDuration = 3f; // Durée maximum de l'attaque
+    private bool isAttacking; 
+    private bool wasattacking; 
+    public float attackInterval = 0.3f; 
+    public float minAttackDuration = 1f; 
+    public float maxAttackDuration = 3f; 
 
     [Header("Component")]
     Rigidbody2D rb;
@@ -246,21 +244,23 @@ public class Enemy : MonoBehaviour
         while (Time.time < attackEndTime)
         {
             Attack();
-            yield return new WaitForSeconds(attackInterval); // Utilise attackInterval ici
+            yield return new WaitForSeconds(attackInterval);
         }
 
-        isAttacking = false; // Réinitialise l'état d'attaque une fois la série d'attaques terminée
-        anim.SetBool("onMove", true); // Assurez-vous que l'animation de mouvement est réactivée
-        wasattacking = true; // Indiquer que l'ennemi a attaqué
+        isAttacking = false; 
+        anim.SetBool("onMove", true); 
+        wasattacking = true; 
     }
 
     void Attack()
     {
         Collider2D[] players = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRange, playerLayerMask);
+    
         foreach (Collider2D player in players)
         {
             if (player.tag == "Player")
             {
+                Debug.Log("Ennemi attaque le joueur");
                 player.GetComponent<perso_principal>().TakeDamage(damage);
             }
         }

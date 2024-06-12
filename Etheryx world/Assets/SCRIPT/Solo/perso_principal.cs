@@ -6,45 +6,43 @@ using UnityEngine.UI;
 
 public class perso_principal : MonoBehaviour
 {
-
-    [Header("Component")] 
+    [Header("Component")]
     private Rigidbody2D rb;
-
     private Animator anim;
 
-    [Header("Stat")] [SerializeField] 
+    [Header("Stat")]
+    [SerializeField]
     private float moveSpeed;
-	public float vie;
-	public float maxvie;
+    public float vie;
+    public float maxvie;
 
     [Header("Attack")]
     private float attacktime;
-
-    [SerializeField] 
+    [SerializeField]
     private float timeBetweenattack;
-
     private bool canMove;
     [SerializeField] private Transform checkEnemy;
     public LayerMask whatIsEnemy;
-
     public float range;
     
-	public static perso_principal instance;
+    public static perso_principal instance;
 
-	private void Awake()
-	{
-		instance = this;
-	}
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
-        vie = maxvie;
+        vie = 3; 
+        Debug.Log("Initialisation de la vie: " + vie);
         transform.position = new Vector2(PlayerPrefs.GetFloat("x"), PlayerPrefs.GetFloat("y"));
 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         canMove = true;
     }
+
     void Update()
     {
         Attack();
@@ -97,11 +95,11 @@ public class perso_principal : MonoBehaviour
         }
         if (Input.GetAxis("Vertical") > 0.1)
         {
-            checkEnemy.position = new Vector3(transform.position.x, transform.position.y +range, 0);
+            checkEnemy.position = new Vector3(transform.position.x, transform.position.y + range, 0);
         }
         else if (Input.GetAxis("Vertical") < -0.1)
         {
-            checkEnemy.position = new Vector3(transform.position.x, transform.position.y -range, 0);
+            checkEnemy.position = new Vector3(transform.position.x, transform.position.y - range, 0);
         }
 
         float x = Input.GetAxis("Horizontal");
@@ -120,21 +118,20 @@ public class perso_principal : MonoBehaviour
         }
     }
 
-
     public void OnAttack()
     {
         Collider2D[] enemy = Physics2D.OverlapCircleAll(checkEnemy.position, 0.5f, whatIsEnemy);
 
         foreach (var enemy_ in enemy)
         {
-            //degats
+            //dégâts
         }
     }
     
-    public void TakeDamage( float damage)
+    public void TakeDamage(float damage)
     {
-        {
-            vie -= damage;
-        }
+        vie -= damage;
+        Debug.Log("Vie après avoir pris des dégâts: " + vie);
+        Debug.Log("Dégâts reçus: " + damage);
     }
 }

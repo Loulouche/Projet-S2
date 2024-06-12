@@ -59,14 +59,7 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
 
         rb.velocity = new Vector2(x, y) * moveSpeed;
 
-        if (x > 0.1)
-        {
-            sr.flipX = false;
-        }
-        else if (x < -0.1)
-        {
-            sr.flipX = true;
-        }
+        
     }
 
     private void SmoothMove()
@@ -88,4 +81,6 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
             targetRotation = (Quaternion)stream.ReceiveNext();
         }
     }
+    
+   
 }
