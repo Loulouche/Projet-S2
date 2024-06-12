@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     private float playerDetectTime;
     public float playerDetectRate;
     public float chaseRange;
+    public float Maxvie;
+    public float Vie;
 
     [Header("Attack")]
     [SerializeField] float attackRange;
@@ -57,6 +59,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        Vie = Maxvie;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -214,7 +217,7 @@ public class Enemy : MonoBehaviour
             previousPosition = transform.position;
         }
     }
-
+    
     void TryUnblock()
     {
         if (targetPlayer != null && !pathPending)
@@ -272,5 +275,23 @@ public class Enemy : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+    
+    public void Takedamage(float damage)
+    {
+        Vie -= damage;
+        Debug.Log("Vie après avoir pris des dégâts: " + Vie);
+        Debug.Log("Dégâts reçus: " + damage);
+        
+        if (Vie <= 0)
+        {
+            Die();
+        }
+    }
+    
+    void Die()
+    {
+        // Ajoutez ici toute logique de mort, comme des effets sonores, des animations, etc.
+        Destroy(gameObject);
     }
 }

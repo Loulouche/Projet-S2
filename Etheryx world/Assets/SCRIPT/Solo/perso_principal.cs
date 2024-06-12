@@ -24,6 +24,7 @@ public class perso_principal : MonoBehaviour
     [SerializeField] private Transform checkEnemy;
     public LayerMask whatIsEnemy;
     public float range;
+	[SerializeField] float Damage;
     
     public static perso_principal instance;
 
@@ -34,7 +35,7 @@ public class perso_principal : MonoBehaviour
 
     private void Start()
     {
-        vie = 3; 
+        vie = maxvie; 
         Debug.Log("Initialisation de la vie: " + vie);
         transform.position = new Vector2(PlayerPrefs.GetFloat("x"), PlayerPrefs.GetFloat("y"));
 
@@ -124,7 +125,7 @@ public class perso_principal : MonoBehaviour
 
         foreach (var enemy_ in enemy)
         {
-            //dégâts
+            enemy_.GetComponent<Enemy>().Takedamage(Damage);
         }
     }
     
