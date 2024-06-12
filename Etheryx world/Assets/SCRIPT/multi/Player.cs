@@ -59,6 +59,15 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
 
         rb.velocity = new Vector2(x, y) * moveSpeed;
 
+        if (x > 0.1)
+        {
+            photonView.RPC("FlipFalse", RpcTarget.AllBuffered);
+        }
+        if (x < -0.1)
+        {
+            photonView.RPC("FlipTrue", RpcTarget.AllBuffered);
+        }
+
         
     }
 
@@ -80,6 +89,17 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
             targetPosition = (Vector3)stream.ReceiveNext();
             targetRotation = (Quaternion)stream.ReceiveNext();
         }
+    }
+    [PunRPC]
+    private void FlipTrue()
+    {
+        sr.flipX = true;
+    }
+
+    [PunRPC]
+    private void FlipFalse()
+    {
+        sr.flipX = false;
     }
     
    
