@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviourPunCallbacks, IPunObservable
 {
@@ -11,7 +12,7 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
     public Animator anim;
     public GameObject PlayerCamera;
     public SpriteRenderer sr;
-    public Text playerNameText;
+    public TextMeshProUGUI PlayerNameText;
 
     public bool isGrounded = false;
     public float moveSpeed;
@@ -25,10 +26,12 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
         if (photonView.IsMine)
         {
             PlayerCamera.SetActive(true);
+            PlayerNameText.text = PhotonNetwork.LocalPlayer.NickName;
         }
         else
         {
             PlayerCamera.SetActive(false);
+            PlayerNameText.text = photonView.Owner.NickName;
         }
     }
 
@@ -63,12 +66,10 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
         {
             photonView.RPC("FlipFalse", RpcTarget.AllBuffered);
         }
-        if (x < -0.1)
+        else if (x < -0.1)
         {
-            photonView.RPC("FlipTrue", RpcTarget.AllBuffered);
+            photonView.RPC("FlipFalse", RpcTarget.AllBuffered);
         }
-
-        
     }
 
     private void SmoothMove()
@@ -90,6 +91,7 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
             targetRotation = (Quaternion)stream.ReceiveNext();
         }
     }
+
     [PunRPC]
     private void FlipTrue()
     {
@@ -101,6 +103,4 @@ public class Player : MonoBehaviourPunCallbacks, IPunObservable
     {
         sr.flipX = false;
     }
-    
-   
 }

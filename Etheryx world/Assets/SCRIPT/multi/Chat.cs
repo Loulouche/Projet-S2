@@ -13,7 +13,8 @@ public class Chat : MonoBehaviour
 
     public void SendMessage()
     {
-        GetComponent<PhotonView>().RPC("GetMessage", RpcTarget.All, inputfield.text);
+        GetComponent<PhotonView>().RPC("GetMessage", RpcTarget.All, (PhotonNetwork.NickName + ": " + inputfield.text));
+    inputfield.text = "";
     }
     
     [PunRPC]
