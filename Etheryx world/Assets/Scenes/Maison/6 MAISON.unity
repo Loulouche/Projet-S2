@@ -616,7 +616,7 @@ Transform:
   - {fileID: 1923642283}
   - {fileID: 1293476510}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &157009247
 GameObject:
@@ -683,16 +683,16 @@ RectTransform:
   m_GameObject: {fileID: 157009247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.22601, y: 5.03405, z: 5.0977697}
+  m_LocalScale: {x: 8.583353, y: 8.268072, z: 8.372727}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 830741503}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1206321755}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 584.5, y: 287.50015}
+  m_AnchoredPosition: {x: 0, y: -13.960388}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &168168096
@@ -2948,9 +2948,7 @@ MonoBehaviour:
   textComponent: {fileID: 1021911093}
   Gamemanager: {fileID: 691932337}
   lines:
-  - Hello
-  - Press 'Escape' near the fireplace to answer my question.
-  - '   '
+  - 'There is nothing to see here ... '
   textSpeed: 0.00005
 --- !u!61 &420155286
 BoxCollider2D:
@@ -5764,16 +5762,16 @@ RectTransform:
   m_GameObject: {fileID: 998378329}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.22601, y: 5.03405, z: 5.0977697}
+  m_LocalScale: {x: 8.583353, y: 8.268072, z: 8.372727}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 168168097}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1206321755}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 584.5, y: 287.50015}
+  m_AnchoredPosition: {x: 0, y: -13.960388}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1021911090
@@ -6007,6 +6005,8 @@ RectTransform:
   - {fileID: 691932340}
   - {fileID: 1978858051}
   - {fileID: 611581059}
+  - {fileID: 998378332}
+  - {fileID: 157009250}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
