@@ -53,7 +53,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
@@ -79,10 +78,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -242,23 +239,26 @@ ScriptsOnlyBuild:
     fullTypeName: MENU
     methodName: Resume
   - assembly: Assembly-CSharp
+    fullTypeName: Restart
+    methodName: Recommencer
+  - assembly: Assembly-CSharp
     fullTypeName: MENU
     methodName: Home
   - assembly: Assembly-CSharp
     fullTypeName: MENU
     methodName: HelpBoutton
   - assembly: Assembly-CSharp
-    fullTypeName: MENU
-    methodName: Resume
+    fullTypeName: Restart
+    methodName: Retry
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: MENU
     methodName: Resume
   - assembly: Assembly-CSharp
-    fullTypeName: MENU
-    methodName: HelpBoutton
-  - assembly: Assembly-CSharp
-    fullTypeName: SOUND
-    methodName: ChangeVolume
+    fullTypeName: Restart
+    methodName: Recommencer
   - assembly: Assembly-CSharp
     fullTypeName: MENU
     methodName: NoHelpBoutton
@@ -335,6 +335,8 @@ ScriptsOnlyBuild:
     - Class: 61
       Script: {instanceID: 0}
     - Class: 62
+      Script: {instanceID: 0}
+    - Class: 70
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
@@ -3167,7 +3169,7 @@ ScriptsOnlyBuild:
     className: CinemachineIndependentImpulseListener
   - hash:
       serializedVersion: 2
-      Hash: 7acfe4a1bf37f38cc6f125b108d84d56
+      Hash: 32ddc633ee71de2c66d75eec7661af32
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: perso_principal
@@ -4577,7 +4579,7 @@ ScriptsOnlyBuild:
     className: AsteroidsGameManager
   - hash:
       serializedVersion: 2
-      Hash: cbade1328e4eca17107c5f8c49f59026
+      Hash: 0765d22cf9bbaaa23640173c94f3fc32
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Restart

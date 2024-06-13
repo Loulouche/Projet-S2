@@ -51,6 +51,7 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        textComponent.text = string.Empty; // Ensure text is cleared before starting to type
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
@@ -67,7 +68,8 @@ public class Dialogue : MonoBehaviour
             StartCoroutine(TypeLine());
         }
         else
-        {textComponent.text = string.Empty;
+        {
+            textComponent.text = string.Empty;
             isDialogueStarted = false;
             Debug.Log("Dialogue ended");
         }
@@ -78,6 +80,7 @@ public class Dialogue : MonoBehaviour
         Gamemanager.SetActive(false);
         textComponent.text = string.Empty;
         isDialogueStarted = false;
+        StopAllCoroutines(); // Ensure all coroutines are stopped
         Debug.Log("Dialogue ended");
     }
 
@@ -95,11 +98,10 @@ public class Dialogue : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isrange = false;
-            if (isDialogueStarted)
-            {
-                EndDialogue();
-            }
-            Debug.Log("Player exited range");
+            EndDialogue(); // Ensure dialogue ends and resets when player exits range
+            index = 0; // Reset index to start dialogue from the beginning
+            Debug.Log("Player exited range and dialogue reset");
         }
     }
 }
+

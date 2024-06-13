@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class OpenImage : MonoBehaviour
 {
+    
     public GameObject imageObject; // L'image à afficher
     private bool isPlayerInRange = false; // Détecte si le joueur est dans la zone de détection
     private bool isImageOpen = false; // Détecte si l'image est ouverte
