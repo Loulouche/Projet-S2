@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +5,10 @@ using Photon.Pun;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
-    public GameObject playerPrefab;
-    public GameObject gameCanvas;
-    public GameObject sceneCamera;
+    public GameObject playerPrefab; // Assigne la préfabriqué du joueur dans l'inspecteur de Unity
+    public GameObject sceneCamera; // Assigne la caméra de scène dans l'inspecteur de Unity
 
-    private void Start()
+    void Start()
     {
         if (PhotonNetwork.IsConnectedAndReady)
         {
@@ -20,10 +18,23 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void SpawnPlayer()
     {
+        if (playerPrefab == null)
+        {
+            Debug.LogError("Player prefab is not assigned in GameManager.");
+            return;
+        }
+
         float randomValue = Random.Range(-1f, 1f);
         PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(randomValue, 0, 0), Quaternion.identity);
-        gameCanvas.SetActive(false);
-        sceneCamera.SetActive(false);
+        
+        if (sceneCamera != null) 
+        {
+            sceneCamera.SetActive(false); // Désactive la caméra de scène si elle est assignée
+        }
+        else
+        {
+            Debug.LogWarning("Scene camera is not assigned in GameManager.");
+        }
     }
 
     public override void OnJoinedRoom()

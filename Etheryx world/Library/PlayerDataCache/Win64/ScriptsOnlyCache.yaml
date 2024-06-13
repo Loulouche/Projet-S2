@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - ANIMATIONS
+    - Chat
     - Coin
     - Dialogue
     - ENIGME
@@ -9,6 +10,7 @@ ScriptsOnlyBuild:
     - GameManager
     - MENU
     - MenuController
+    - Message
     - MoveToLevel
     - OpenImage
     - Player
@@ -48,11 +50,11 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
@@ -78,8 +80,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -90,6 +94,7 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
@@ -102,6 +107,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
+    - UnityEngine.UI.VerticalLayoutGroup
   serializedClasses:
     AstarPathfindingProject:
     - Pathfinding.AstarColor
@@ -275,8 +281,8 @@ ScriptsOnlyBuild:
     fullTypeName: MenuController
     methodName: SetUserName
   - assembly: Assembly-CSharp
-    fullTypeName: GameManager
-    methodName: SpawnPlayer
+    fullTypeName: Chat
+    methodName: SendMessage
   - assembly: Assembly-CSharp
     fullTypeName: ENIGME
     methodName: CheckInput
@@ -737,6 +743,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1594}
     - Class: 114
+      Script: {instanceID: 1828}
+    - Class: 114
       Script: {instanceID: 3056}
     - Class: 114
       Script: {instanceID: 3346}
@@ -744,6 +752,14 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3632}
     - Class: 114
       Script: {instanceID: 3756}
+    - Class: 114
+      Script: {instanceID: 3996}
+    - Class: 114
+      Script: {instanceID: 4848}
+    - Class: 114
+      Script: {instanceID: 5172}
+    - Class: 114
+      Script: {instanceID: 6368}
     - Class: 114
       Script: {instanceID: 6642}
     - Class: 114
@@ -757,9 +773,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 8184}
     - Class: 114
+      Script: {instanceID: 8772}
+    - Class: 114
+      Script: {instanceID: 9684}
+    - Class: 114
       Script: {instanceID: 10194}
     - Class: 114
       Script: {instanceID: 10638}
+    - Class: 114
+      Script: {instanceID: 37024}
+    - Class: 114
+      Script: {instanceID: 37138}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -847,6 +871,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5172}
     - Class: 114
       Script: {instanceID: 6368}
+    - Class: 114
+      Script: {instanceID: 6382}
     - Class: 114
       Script: {instanceID: 6492}
     - Class: 114
@@ -1068,6 +1094,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6368}
     - Class: 114
+      Script: {instanceID: 6382}
+    - Class: 114
       Script: {instanceID: 6492}
     - Class: 114
       Script: {instanceID: 6642}
@@ -1176,6 +1204,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5172}
     - Class: 114
       Script: {instanceID: 6368}
+    - Class: 114
+      Script: {instanceID: 6382}
     - Class: 114
       Script: {instanceID: 6492}
     - Class: 114
@@ -1728,6 +1758,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6368}
     - Class: 114
+      Script: {instanceID: 6382}
+    - Class: 114
       Script: {instanceID: 6492}
     - Class: 114
       Script: {instanceID: 6642}
@@ -1836,6 +1868,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5172}
     - Class: 114
       Script: {instanceID: 6368}
+    - Class: 114
+      Script: {instanceID: 6382}
     - Class: 114
       Script: {instanceID: 6492}
     - Class: 114
@@ -1946,6 +1980,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6368}
     - Class: 114
+      Script: {instanceID: 6382}
+    - Class: 114
       Script: {instanceID: 6492}
     - Class: 114
       Script: {instanceID: 6642}
@@ -2054,6 +2090,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5172}
     - Class: 114
       Script: {instanceID: 6368}
+    - Class: 114
+      Script: {instanceID: 6382}
     - Class: 114
       Script: {instanceID: 6492}
     - Class: 114
@@ -4843,7 +4881,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 9143024cd5b52e793564b58cee292d74
+      Hash: b28e42cc59d57f344b7be8f1f05dbe00
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -4925,6 +4963,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 5f7ac0fc20a3ce9a49e9e859f4f5d938
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Message
+  - hash:
+      serializedVersion: 2
+      Hash: 3078bf6190e3de508f1563189c7f3618
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Chat
   platform: 19
   scenePathNames:
   - Assets/Scenes/INTRO.unity
@@ -4946,4 +4996,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Maison/12 MAISON.unity
   - Assets/Scenes/Maison/13 MAISON.unity
   - Assets/Scenes/Maison/14 MAISON.unity
-  playerPath: C:/Users/linel/Etheryx world.exe
+  playerPath: C:/Users/louis/Desktop/Projet-S2/Etheryx world/Etheryx world.exe
