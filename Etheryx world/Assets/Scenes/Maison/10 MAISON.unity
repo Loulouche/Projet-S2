@@ -20984,7 +20984,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0206c5a65ecad4c9a0ceb3af0752ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PANEL: {fileID: 1072739700}
+  player: {fileID: 1763480003}
   coinText: {fileID: 1403293482}
+  playerScript: {fileID: 1763480004}
 --- !u!70 &1063372087
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -23437,6 +23440,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 19188351101906087, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
   m_PrefabInstance: {fileID: 1763480001}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1763480004 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 19188352166483986, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
+  m_PrefabInstance: {fileID: 1763480001}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763480003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29523b6524ae955498b09eb6bbc88088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1808987768
 GameObject:
   m_ObjectHideFlags: 0

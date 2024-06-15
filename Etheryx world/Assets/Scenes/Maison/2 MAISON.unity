@@ -21655,6 +21655,7 @@ GameObject:
   - component: {fileID: 1180660247}
   - component: {fileID: 1180660246}
   - component: {fileID: 1180660245}
+  - component: {fileID: 1180660248}
   m_Layer: 0
   m_Name: "chemin\xE9"
   m_TagString: Untagged
@@ -21689,6 +21690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0206c5a65ecad4c9a0ceb3af0752ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScriptRestart: {fileID: 1180660248}
+  PANEL: {fileID: 1222339161}
   coinText: {fileID: 361719390}
 --- !u!114 &1180660246
 MonoBehaviour:
@@ -21725,6 +21728,40 @@ CapsuleCollider2D:
   m_Offset: {x: 0.037281934, y: 0.13159367}
   m_Size: {x: 0.3533574, y: 1.2339977}
   m_Direction: 0
+--- !u!114 &1180660248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180660243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719f1a4bc2579dd43974b8981099b3f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 0}
+  enemy: {fileID: 0}
+  enemySpawnPoint: {fileID: 0}
+  coinScript: {fileID: 1180660245}
+  playerScript: {fileID: 1437021371}
+  restartButton: {fileID: 0}
+  player: {fileID: 1437021370}
+  enigmeIDs:
+  - enigme1
+  - enigme2
+  - enigme3
+  - enigme4
+  - enigme5
+  - enigme6
+  - enigme7
+  - enigme8
+  - enigme9
+  - enigme10
+  - enigme11
+  - enigme12
+  - enigme13
+  - enigme14
 --- !u!1 &1222339161
 GameObject:
   m_ObjectHideFlags: 0
@@ -23576,6 +23613,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 19188351101906087, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
   m_PrefabInstance: {fileID: 1437021368}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1437021371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 19188352166483986, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
+  m_PrefabInstance: {fileID: 1437021368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437021370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29523b6524ae955498b09eb6bbc88088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1548459339
 GameObject:
   m_ObjectHideFlags: 0

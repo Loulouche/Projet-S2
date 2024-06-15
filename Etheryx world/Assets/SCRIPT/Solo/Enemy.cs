@@ -22,9 +22,9 @@ public class Enemy : MonoBehaviour
     public LayerMask playerLayerMask;
     private bool isAttacking; 
     private bool wasattacking; 
-    public float attackInterval = 0.3f; 
+    public float attackInterval = 0.4f; 
     public float minAttackDuration = 1f; 
-    public float maxAttackDuration = 3f; 
+    public float maxAttackDuration = 2f; 
 
     [Header("Component")]
     Rigidbody2D rb;
@@ -73,8 +73,17 @@ public class Enemy : MonoBehaviour
         smoothH = 0f;
         smoothV = 0f;
         InvokeRepeating("UpdatePath", 0f, .5f);
-        
+
         startPosition = transform.position; // Enregistrement de la position initiale
+
+        // Empêcher la destruction lors du changement de scène
+        DontDestroyOnLoad(gameObject);
+
+        // Vérifier si l'ennemi devrait être mort au démarrage
+        if (PlayerPrefs.HasKey("EnemyDead") && PlayerPrefs.GetInt("EnemyDead") == 1)
+        {
+            Die(); // Si marqué comme mort, désactiver immédiatement
+        }
     }
 
     void OnPathComplete(Path p)
@@ -306,8 +315,11 @@ private void FixedUpdate()
     {
         // Ajoutez ici toute logique de mort, comme des effets sonores, des animations, etc.
         PlayerPrefs.SetInt("EnemyDead", 1); // Marque l'ennemi comme mort
-        gameObject.SetActive(false);
+        PlayerPrefs.Save();
+        gameObject.SetActive(false); // Désactivez l'objet
     }
+
+    
     
     
     
