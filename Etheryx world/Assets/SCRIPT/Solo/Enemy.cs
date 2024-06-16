@@ -61,7 +61,6 @@ public class Enemy : MonoBehaviour
     private Vector2 startPosition;
 
 
-   
     void Start()
     {
         Vie = Maxvie;
@@ -80,12 +79,14 @@ public class Enemy : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // Vérifier si l'ennemi devrait être mort au démarrage
-        if (PlayerPrefs.HasKey("EnemyDead") && PlayerPrefs.GetInt("EnemyDead") == 1)
+        if (PlayerPrefs.HasKey(gameObject.name + "_EnemyDead") && PlayerPrefs.GetInt(gameObject.name + "_EnemyDead") == 1)
         {
-            Die(); // Si marqué comme mort, désactiver immédiatement
+            gameObject.SetActive(false); // Si marqué comme mort, désactiver immédiatement
         }
         else
+        {
             ActivateObjects();
+        }
     }
 
     void ActivateObjects()
@@ -99,7 +100,7 @@ public class Enemy : MonoBehaviour
         // Log pour vérifier l'activation
         Debug.Log("Objects activated in Start");
     }
-    
+
     void OnPathComplete(Path p)
     {
         if (!p.error)
@@ -123,86 +124,85 @@ public class Enemy : MonoBehaviour
         }
     }
 
-   
-private void FixedUpdate()
-{
-    if (targetPlayer != null)
+    private void FixedUpdate()
     {
-        // Vérifie si l'ennemi est bloqué
-        CheckIfBlocked();
-
-        if (isBlocked)
+        if (targetPlayer != null)
         {
-            // Si l'ennemi est bloqué, arrêtez son mouvement
-            rb.velocity = Vector2.zero;
-            anim.SetBool("onMove", false);
-            return;
-        }
+            // Vérifie si l'ennemi est bloqué
+            CheckIfBlocked();
 
-        float dist = Vector2.Distance(transform.position, targetPlayer.transform.position);
-
-        if (dist < attackRange && Time.time - lastAttackTime >= attackRate)
-        {
-            // Si l'ennemi est assez proche pour attaquer et qu'il peut attaquer
-            lastAttackTime = Time.time;
-            isAttacking = true;
-            rb.velocity = Vector2.zero;
-            anim.SetBool("onMove", false);
-            anim.SetTrigger("attack");
-            StartCoroutine(PerformAttacks());
-            return;
-        }
-        else if (dist > attackRange)
-        {
-            // Si l'ennemi est trop loin pour attaquer, gérer le mouvement vers la cible
-            if (isAttacking) return;
-
-            if (path == null)
+            if (isBlocked)
             {
+                // Si l'ennemi est bloqué, arrêtez son mouvement
+                rb.velocity = Vector2.zero;
+                anim.SetBool("onMove", false);
                 return;
             }
 
-            if (currentWayPoint >= path.vectorPath.Count)
+            float dist = Vector2.Distance(transform.position, targetPlayer.transform.position);
+
+            if (dist < attackRange && Time.time - lastAttackTime >= attackRate)
             {
-                reachEndPath = true;
+                // Si l'ennemi est assez proche pour attaquer et qu'il peut attaquer
+                lastAttackTime = Time.time;
+                isAttacking = true;
+                rb.velocity = Vector2.zero;
+                anim.SetBool("onMove", false);
+                anim.SetTrigger("attack");
+                StartCoroutine(PerformAttacks());
+                return;
+            }
+            else if (dist > attackRange)
+            {
+                // Si l'ennemi est trop loin pour attaquer, gérer le mouvement vers la cible
+                if (isAttacking) return;
+
+                if (path == null)
+                {
+                    return;
+                }
+
+                if (currentWayPoint >= path.vectorPath.Count)
+                {
+                    reachEndPath = true;
+                }
+                else
+                {
+                    reachEndPath = false;
+
+                    Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - rb.position).normalized;
+                    Vector2 force = direction * speed * Time.fixedDeltaTime;
+
+                    rb.velocity = force;
+
+                    moveX = direction.x;
+                    moveY = direction.y;
+
+                    float distance = Vector2.Distance(rb.position, path.vectorPath[currentWayPoint]);
+                    if (distance < nextWaypointDistance)
+                    {
+                        currentWayPoint++;
+                    }
+                    anim.SetBool("onMove", true);
+                }
             }
             else
             {
-                reachEndPath = false;
-
-                Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - rb.position).normalized;
-                Vector2 force = direction * speed * Time.fixedDeltaTime;
-
-                rb.velocity = force;
-
-                moveX = direction.x;
-                moveY = direction.y;
-
-                float distance = Vector2.Distance(rb.position, path.vectorPath[currentWayPoint]);
-                if (distance < nextWaypointDistance)
-                {
-                    currentWayPoint++;
-                }
-                anim.SetBool("onMove", true);
+                // Si l'ennemi est dans la plage d'attaque mais ne peut pas attaquer, arrêtez son mouvement
+                rb.velocity = Vector2.zero;
+                anim.SetBool("onMove", false);
             }
-        }
-        else
-        {
-            // Si l'ennemi est dans la plage d'attaque mais ne peut pas attaquer, arrêtez son mouvement
-            rb.velocity = Vector2.zero;
-            anim.SetBool("onMove", false);
+
+            // Lissage des valeurs de H et V pour les animations
+            smoothH = Mathf.Lerp(smoothH, Mathf.Clamp(moveX, -1f, 1f), smoothingFactor);
+            smoothV = Mathf.Lerp(smoothV, Mathf.Clamp(moveY, -1f, 1f), smoothingFactor);
+
+            anim.SetFloat("H", smoothH);
+            anim.SetFloat("V", smoothV);
         }
 
-        // Lissage des valeurs de H et V pour les animations
-        smoothH = Mathf.Lerp(smoothH, Mathf.Clamp(moveX, -1f, 1f), smoothingFactor);
-        smoothV = Mathf.Lerp(smoothV, Mathf.Clamp(moveY, -1f, 1f), smoothingFactor);
-
-        anim.SetFloat("H", smoothH);
-        anim.SetFloat("V", smoothV);
+        DetectPlayer(); // Méthode pour détecter le joueur à intervalles réguliers
     }
-
-    DetectPlayer(); // Méthode pour détecter le joueur à intervalles réguliers
-}
 
     void DetectPlayer()
     {
@@ -253,7 +253,7 @@ private void FixedUpdate()
             previousPosition = transform.position;
         }
     }
-    
+
     void TryUnblock()
     {
         if (targetPlayer != null && !pathPending)
@@ -312,7 +312,7 @@ private void FixedUpdate()
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-    
+
     public void Takedamage(float damage)
     {
         Vie -= damage;
@@ -324,19 +324,15 @@ private void FixedUpdate()
             Die();
         }
     }
-    
+
     void Die()
     {
         // Ajoutez ici toute logique de mort, comme des effets sonores, des animations, etc.
-        PlayerPrefs.SetInt("EnemyDead", 1); // Marque l'ennemi comme mort
+        PlayerPrefs.SetInt(gameObject.name + "_EnemyDead", 1); // Marque l'ennemi comme mort
         PlayerPrefs.Save();
         gameObject.SetActive(false); // Désactivez l'objet
     }
 
-    
-    
-    
-    
     public void ResetEnemy()
     {
         Vie = Maxvie; // Réinitialiser la vie à sa valeur maximale
@@ -349,6 +345,18 @@ private void FixedUpdate()
         smoothH = 0f;
         smoothV = 0f;
         
+        // Enlever le marqueur de mort
+        PlayerPrefs.SetInt(gameObject.name + "_EnemyDead", 0);
+        PlayerPrefs.Save();
     }
-    
+
+    public void Revive()
+    {
+        if (PlayerPrefs.HasKey(gameObject.name + "_EnemyDead") && PlayerPrefs.GetInt(gameObject.name + "_EnemyDead") == 1)
+        {
+            PlayerPrefs.SetInt(gameObject.name + "_EnemyDead", 0);
+            PlayerPrefs.Save();
+            ResetEnemy();
+        }
+    }
 }
