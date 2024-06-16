@@ -84,8 +84,22 @@ public class Enemy : MonoBehaviour
         {
             Die(); // Si marqué comme mort, désactiver immédiatement
         }
+        else
+            ActivateObjects();
     }
 
+    void ActivateObjects()
+    {
+        // Exemple d'activation d'objets, ajoute ici tous les objets nécessaires
+        gameObject.SetActive(true); // Assurer que l'objet actuel est actif
+
+        // Si tu as d'autres objets spécifiques à activer, fais-le ici
+        // Exemple : someOtherGameObject.SetActive(true);
+
+        // Log pour vérifier l'activation
+        Debug.Log("Objects activated in Start");
+    }
+    
     void OnPathComplete(Path p)
     {
         if (!p.error)
@@ -334,7 +348,6 @@ private void FixedUpdate()
         wasattacking = false;
         smoothH = 0f;
         smoothV = 0f;
-        
         
     }
     
