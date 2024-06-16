@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Coin : MonoBehaviour
 { 
     public Restart ScriptRestart;
-    public GameObject PANEL;
+    public GameObject ANIM;
     public TextMeshProUGUI coinText; // Référence au texte affichant le nombre de pièces
     private int coinCount = 0; // Nombre de pièces collectées
 
@@ -15,6 +15,7 @@ public class Coin : MonoBehaviour
     
     void Start()
     {
+        ANIM.SetActive(false);
         // Vérifier si le joueur a déjà collecté des pièces dans une autre scène
         if (PlayerPrefs.HasKey("CoinCount"))
         {
@@ -28,14 +29,9 @@ public class Coin : MonoBehaviour
         coinCount++; // Incrémenter le nombre de pièces
         UpdateCoinText(); // Mettre à jour le texte des pièces
 
+        
         // Vérifier si le joueur a collecté suffisamment de pièces pour la transition vers une autre scène
-        if (coinCount >= 7)
-        {
-            ScriptRestart.Recommencer();
-
-            // Charger la scène avec l'index 19 de manière asynchrone
-            SceneManager.LoadSceneAsync(19);
-        }
+      
     }
 
     
@@ -44,9 +40,22 @@ public class Coin : MonoBehaviour
         coinCount = 0; // Réinitialiser le nombre de pièces
         UpdateCoinText(); // Mettre à jour le texte des pièces
     }
+
+    void Update()
+    {
+        if (coinCount >= 7)
+        {
+            if (ANIM != null)
+            {
+                ANIM.SetActive(true);
+            }
+            ScriptRestart.Recommencer();
+        }
+    }
     void UpdateCoinText()
     {
         coinText.text = "" + coinCount; // Mettre à jour le texte des pièces
+       
     }
 
     void OnDestroy()
