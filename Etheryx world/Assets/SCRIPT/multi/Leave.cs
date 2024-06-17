@@ -1,24 +1,27 @@
 using UnityEngine;
-using Photon.Pun; // Nécessaire pour PhotonNetwork
-using Photon.Realtime; // Nécessaire pour les callbacks de Photon
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine.SceneManagement;
 
 public class Leave : MonoBehaviourPunCallbacks
 {
-   void Update()
-       {
-           // Vérifie si la touche "Echap" est pressée
-           if (Input.GetKeyDown(KeyCode.Escape))
-           {
-               // Quitte la room Photon
-               PhotonNetwork.LeaveRoom();
-           }
-       }
-   
-       // Callback appelée lorsque le joueur a quitté la room
-       public override void OnLeftRoom()
-       {
-           // Charge la scène "Main Menu"
-           SceneManager.LoadScene("MENU");
-       }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ResetGameState(); // Réinitialiser l'état du jeu
+            PhotonNetwork.LeaveRoom();
+        }
+    }
+
+    public override void OnLeftRoom()
+    {
+        SceneManager.LoadScene("MENU");
+    }
+
+    void ResetGameState()
+    {
+        // Réinitialiser tous les états nécessaires ici
+        PlayerPrefs.DeleteAll(); // Effacer les PlayerPrefs (ou réinitialiser seulement ceux nécessaires)
+    }
 }

@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - Dialogue
     - ENIGME
     - Enemy
+    - EnigmeMulti
     - GameManager
     - Leave
     - MENU
@@ -282,8 +283,14 @@ ScriptsOnlyBuild:
     fullTypeName: MenuController
     methodName: SetUserName
   - assembly: Assembly-CSharp
+    fullTypeName: EnigmeMulti
+    methodName: CheckInput
+  - assembly: Assembly-CSharp
     fullTypeName: Chat
     methodName: SendMessage
+  - assembly: Assembly-CSharp
+    fullTypeName: EnigmeMulti
+    methodName: OnSubmitButtonClick
   - assembly: Assembly-CSharp
     fullTypeName: ENIGME
     methodName: CheckInput
@@ -710,6 +717,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
+    - Class: 70
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -768,6 +777,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10200}
     - Class: 114
       Script: {instanceID: 10644}
+    - Class: 114
+      Script: {instanceID: 33210}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -4974,6 +4985,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 833fccef25c6b3f72a3762d4a3856c64
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnigmeMulti
   platform: 19
   scenePathNames:
   - Assets/Scenes/INTRO.unity

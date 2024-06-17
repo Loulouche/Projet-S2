@@ -43,13 +43,17 @@ public class Coin : MonoBehaviour
 
     void Update()
     {
-        if (coinCount >= 7)
+        if (coinCount >= 1)
         {
             if (ANIM != null)
             {
                 ANIM.SetActive(true);
             }
-            ScriptRestart.Recommencer();
+            if (ScriptRestart != null)
+            {
+                ScriptRestart.Recommencer();
+            }
+           
         }
     }
     void UpdateCoinText()
