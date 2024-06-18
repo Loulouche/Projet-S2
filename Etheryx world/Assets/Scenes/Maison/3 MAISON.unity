@@ -24460,17 +24460,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 19188351101906087, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
   m_PrefabInstance: {fileID: 2019691456}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2019691459 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 19188352166483986, guid: 61888eb70b8b38e439f70035e1bb2941, type: 3}
-  m_PrefabInstance: {fileID: 2019691456}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019691458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29523b6524ae955498b09eb6bbc88088, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2023070606
 GameObject:
   m_ObjectHideFlags: 0
@@ -24521,10 +24510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0206c5a65ecad4c9a0ceb3af0752ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PANEL: {fileID: 838177119}
-  player: {fileID: 2019691458}
+  ScriptRestart: {fileID: 0}
+  ANIM: {fileID: 2117026618}
   coinText: {fileID: 1071033538}
-  playerScript: {fileID: 2019691459}
 --- !u!70 &2023070609
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -24784,3 +24772,34 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2117026618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2117026619}
+  m_Layer: 0
+  m_Name: rien
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2117026619
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117026618}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 546.13696, y: 375.7906, z: -6.922353}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -43,7 +43,7 @@ public class Coin : MonoBehaviour
 
     void Update()
     {
-        if (coinCount >= 3)
+        if (coinCount >= 7)
         {
             if (ANIM != null)
             {
